@@ -4,6 +4,13 @@ var app = require('../app');
 
 app.set('port', process.env.PORT || 3000);
 
-var server = app.listen(app.get('port'), function() {
-  debug('Express server listening on port ' + server.address().port);
-});
+if (app.get('env') === 'development') {
+    var server = app.listen(app.get('port'), function() {
+        debug('Express server listening on port ' + server.address().port);
+    });
+}
+else{
+    var server = app.listen(app.get('port'), '146.185.183.37');
+}
+
+
