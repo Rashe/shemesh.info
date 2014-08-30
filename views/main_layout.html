@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>shemesh.info </title>
+    <meta name="description" content="Rafael Shemesh, just another useless page of developer">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="/js/plugin.js"></script>
+    <script src="/js/js.js"></script>
+
+    <script type="text/javascript">
+        var isIE11 = navigator.userAgent.match(/Trident\/7.0; rv 11.0/);
+        if ((navigator.userAgent.indexOf('MSIE') !=-1)  || (isIE11 !=null))
+        {
+            // Using IE
+            window.location = "https://www.google.com/intl/en/chrome/browser/"
+        }
+    </script>
+</head>
+<body>
+<header>
+    {% block nav %}{% endblock %}
+</header>
+
+
+{% block content %}{% endblock %}
+
+
+
+
+
+
+</body>
+</html>

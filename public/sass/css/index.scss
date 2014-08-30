@@ -1,0 +1,98 @@
+#content_wra {
+  width: 500px;
+  height: 600px;
+  margin: auto;
+}
+
+#eban, #pop_image {
+  display:$bl;
+  height: 300px;
+  position: relative;
+  color:$color_white;
+  text-align: center;
+  top: -500px;
+  overflow: hidden;
+}
+.search_form{
+  display: $bl;
+  width: 400px;
+  position: relative;
+  color: $color_white;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.message {
+  display: none;
+  height: 70px;
+  position: relative;
+  color: $color_white;
+  text-align: center;
+  overflow: hidden;
+}
+
+.fuck {
+  display: none;
+  position: relative;
+  top: -150px;
+  text-align: center;
+}
+
+.fuck p {
+  font-size: 35px;
+  color: white;
+}
+
+.here {
+  color: white;
+  display: none;
+  position: relative;
+  top: -120px;
+  text-align: center;
+}
+
+.here a {
+  color: #ffffff;
+
+}
+
+.here span {
+  font-size: 12px;
+  display:$bl;
+}
+
+#search_box input {
+  color: #fff;
+  width: 250px;
+  height: 25px;
+  background-color: #3C3C3C;
+  border: 1px solid #404040;
+  padding-left: 5px;
+
+}
+
+#search_box button {
+  width: 61px;
+  height: 30px;
+  background-color: #3C3C3C;
+  border: 1px solid #404040;
+}
+
+#search_box button:hover, .gay:hover, .gay_or_not:hover  {
+  background-color: #4f4f4f;
+  color: #fff;
+}
+
+#content_box_wra
+{
+  margin: 0 auto;
+}
+
+.content_box
+{
+  display: inline-block;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  background-color: red;
+}

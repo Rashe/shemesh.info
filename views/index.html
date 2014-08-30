@@ -1,0 +1,31 @@
+{% extends 'main_layout.html' %}
+{% block title %}To Do Glist{% endblock %}
+{% block nav %}
+{% include 'nav.html' with data%}
+{% endblock %}
+
+{% block content %}
+<section id="content_wra">
+    <div id="eban">
+        <img src="img/23.gif"/>
+    </div>
+    <div class="search_form">
+        <form action="#" id="search_box">
+            <div class="wrapper">
+                <input type="text" id="search" name="search" placeholder="{{data.index_searchPlh}}"/>
+                <button type="submit" class="search_btn">{{data.index_button}}</button>
+            </div>
+        </form>
+    </div>
+    <div class="message">
+        <p>{{data.index_message}} </p>
+    </div>
+    <div class="fuck">
+        <p>{{data.index_fuck}}</p>
+    </div>
+    <div class="here">
+        <a href="/">Blah</a>
+        <span>{{data.index_here}}</span>
+    </div>
+</section>
+{% endblock %}
