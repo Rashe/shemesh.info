@@ -1,0 +1,17 @@
+{% extends 'main_layout.html' %}
+{% block title %}To Do Glist{% endblock %}
+{% block nav %}
+{% include 'nav.html' with data%}
+{% endblock %}
+
+{% block content %}
+<section id="about">
+
+    <hr/>
+    <h1>{{data.about_h1}}</h1>
+    <article>
+        <p>{{data.about_p}}</p>
+    </article>
+    <hr/>
+</section>
+{% endblock %}

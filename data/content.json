@@ -7,6 +7,10 @@
     "nav_home": "Home",
     "nav_tests": "Tests(soon)",
     "nav_quests": "Quests (soon)",
-    "nav_about": "About (soon)",
-    "error_message": "You have found him!! (404??)"
+    "nav_about": "About",
+    "error_message": "You have found him!! (404??)",
+    "about_h1": "All about",
+    "about_p": "There is nothing yet"
+
+
 }

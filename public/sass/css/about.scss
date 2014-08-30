@@ -1,0 +1,26 @@
+$about_color: #008CBA;
+
+body.about{
+  background: #fff;
+}
+
+hr{
+  border: solid #DDDDDD;
+  border-width: 1px 0 0;
+  clear: both;
+  margin: 1.11111rem 0 1.05556rem;
+  height: 0;
+}
+
+.about h1, .about p, .about{
+  color: $about_color;
+}
+
+#about{
+  width: 550px;
+  margin: 140px auto 0;
+}
+
+.about .nav_text{
+  color: #000;
+}

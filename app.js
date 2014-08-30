@@ -16,7 +16,7 @@ app.engine('html', swig.renderFile);
 app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
 app.set('view cache', false);
-swig.setDefaults({ cache: false });
+swig.setDefaults({cache: false});
 //swing end
 
 // uncomment after placing your favicon in /public
@@ -43,12 +43,21 @@ app.use(session({
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(sass.middleware({
-    src: __dirname + '/public/sass',
-    dest: __dirname + '/public',
-    debug: true
-}));
-
+if (app.get('env') === 'development') {
+    app.use(sass.middleware({
+        src: __dirname + '/public/sass',
+        dest: __dirname + '/public',
+        debug: true
+    }));
+}
+else {
+    app.use(sass.middleware({
+        src: __dirname + '/public/sass',
+        dest: __dirname + '/public',
+        debug: false,
+        outputStyle: 'compressed'
+    }));
+}
 
 app.use('/', routes);
 
@@ -61,9 +70,6 @@ app.use(function (req, res, next) {
 });
 
 // error handlers
-
-// development error handler
-// will print stacktrace
 if (app.get('env') === 'development') {
     app.use(function (err, req, res, next) {
         console.log('error from app.js', err);
@@ -76,18 +82,17 @@ if (app.get('env') === 'development') {
         });
     });
 }
-
-// production error handler
-// no stacktraces leaked to user
-app.use(function (err, req, res, next) {
-    res.status(err.status || 500);
-    var data_content = require('./data/content');
-    res.render('error', {
-        message: err.message,
-        data: data_content,
-        error: {}
+else {
+    app.use(function (err, req, res, next) {
+        res.status(err.status || 500);
+        var data_content = require('./data/content');
+        res.render('error', {
+            message: err.message,
+            data: data_content,
+            error: {}
+        });
     });
-});
+}
 
 
 module.exports = app;
