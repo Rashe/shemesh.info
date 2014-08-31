@@ -61,7 +61,7 @@
   display:$bl;
 }
 
-#search_box input {
+.search_form input {
   color: #fff;
   width: 250px;
   height: 25px;
@@ -71,14 +71,14 @@
 
 }
 
-#search_box button {
+.search_form button {
   width: 61px;
   height: 30px;
   background-color: #3C3C3C;
   border: 1px solid #404040;
 }
 
-#search_box button:hover, .gay:hover, .gay_or_not:hover  {
+.search_form button:hover, .gay:hover, .gay_or_not:hover  {
   background-color: #4f4f4f;
   color: #fff;
 }
