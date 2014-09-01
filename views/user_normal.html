@@ -1,0 +1,19 @@
+{% extends 'main_layout.html' %}
+{% block title %}To Do Glist{% endblock %}
+{% block nav %}
+{% include 'nav.html' with data%}
+{% endblock %}
+
+{% block content %}
+<section id="use_browser">
+
+
+    <h1>{{data.browser_h1}}</h1>
+    <article>
+        <img src="../img/user.jpg" alt="y u no use normal browser"/>
+
+        <p>{{data.browser}} <a href="https://www.google.com/chrome/browser/">{{data.browser_link}}</a></p>
+    </article>
+
+</section>
+{% endblock %}

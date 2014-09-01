@@ -10,7 +10,10 @@
     "nav_about": "About",
     "error_message": "You have found him!! (404??)",
     "about_h1": "All about",
-    "about_p": "There is nothing yet"
+    "about_p": "There is nothing yet",
+    "browser_h1": "Please start using a normal browser",
+    "browser": "One of them is",
+    "browser_link": "Chrome"
 
 
 }
