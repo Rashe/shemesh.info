@@ -110,6 +110,7 @@ nav a:hover
   display:$bl;
   -webkit-transform: rotate(-90deg);
   -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
   position: absolute;
   margin-top: 300px;
   font-size: 18px;
@@ -124,6 +125,7 @@ nav a:hover
   position: absolute;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
   margin-top: 0;
   margin-left: 0;
   top: 0;

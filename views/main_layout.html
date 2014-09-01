@@ -14,11 +14,13 @@
     <script src="/js/js.js"></script>
 
     <script type="text/javascript">
-        var isIE11 = navigator.userAgent.match(/Trident\/7.0; rv 11.0/);
-        if ((navigator.userAgent.indexOf('MSIE') !=-1)  || (isIE11 !=null))
-        {
+        var isIE11 = navigator.userAgent.match(/Trident\/7.0; rv 11.0/),
+                path = window.location.href;
+        if ((navigator.userAgent.indexOf('MSIE') != -1) || (isIE11 != null)) {
             // Using IE
-            window.location = "/user_normal"
+            if (path != 'http://shemesh.info/user_normal') {
+                window.location = "/user_normal"
+            }
         }
     </script>
 </head>
