@@ -15,8 +15,6 @@
                 nav: 'nav',
                 top_list: '.top_list',
                 nav_text: '.nav_text'
-
-
             },
             classes: {
                 nav_text_wide: 'nav_text_wide'
