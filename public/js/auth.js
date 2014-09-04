@@ -49,11 +49,11 @@
 $(document).ready(function () {
     auth.init({debug: true});
 
-    if ($('.loginForm').length > 0) {
-        auth.auth_sendForm('login_form', '/login', '/services');
+    if ($('#login').length > 0) {
+        auth.main.auth_sendForm('login_form', '/login', '/services');
     }
-    if ($('.regForm').length > 0) {
-        auth.auth_sendForm('registration_form', '/registration', '/services');
+    if ($('#registration').length > 0) {
+        auth.main.auth_sendForm('registration_form', '/registration', '/services');
     }
 
 });

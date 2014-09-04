@@ -2,7 +2,7 @@ var express = require('express');
 var data_content = require('../data/content');
 var router = express.Router();
 
-/* GET home page. */
+/* GET */
 router.get('/', function (req, res) {
     res.render('index', {data: data_content, css: 'home'});
 });
@@ -33,4 +33,11 @@ router.get('/registration', function (req, res) {
     }
 });
 
+
+//POST
+
+router.post('/registration', function (req, res) {
+    console.log('huj 2' );
+    require('../controller/registration').post(req, res);
+});
 module.exports = router;
