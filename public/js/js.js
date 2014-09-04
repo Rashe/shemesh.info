@@ -14,7 +14,8 @@
                 here: '.here',
                 nav: 'nav',
                 top_list: '.top_list',
-                nav_text: '.nav_text'
+                nav_text: '.nav_text',
+                login: '#login'
             },
             classes: {
                 nav_text_wide: 'nav_text_wide'
@@ -24,7 +25,7 @@
 
         this.init = function (settings) {
             var _selectors = _that.settings.selectors;
-            this.main.placeholder(_selectors.placeholder);
+            //this.main.placeholder(_selectors.placeholder);
             //this.main.search_shit();
             this.main.nav_hover();
             //this.main.createWidget();
@@ -108,8 +109,10 @@
 $(document).ready(function () {
     shmsh.init({debug: true});
 
-
     $('.search_btn').on('click', function(){
         shmsh.main.search_shit()
-    })
+    });
+    $(".close").on("click", function () {
+        $(this).parent().hide();
+    });
 });

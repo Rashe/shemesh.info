@@ -1,0 +1,95 @@
+@import "mixins";
+
+$login_color: #5C5C5C;
+
+#login, #registration {
+  width: 400px;
+  margin: 90px auto 0;
+  background: $login_color;
+  min-height: 300px;
+  box-shadow: 0px 0px 13px 13px rgba(2, 1, 1, 0.5);
+  @include borderRadius(4px);
+}
+
+#registration{
+  min-height: 350px;
+}
+
+#login h1, #registration h1 {
+  text-align: center;
+  padding: 10px;
+  color: #008CBA;
+  text-shadow: 1px 0px 0px #000;
+}
+
+#error_disp {
+  display: none;
+}
+
+#login form, #registration form {
+  text-align: center;
+}
+
+.inp_holder {
+  margin-top: 20px;
+}
+
+.but_holder {
+  margin-top: 20px;
+}
+
+#login .button, #registration .button {
+  color: #008CBA;
+  font-size: 17px;
+  padding: 4px 25px;
+  background-color: #383535;
+  transition: background-color 300ms ease-out;
+  border: 1px solid #252525;
+}
+
+#login .button:hover, #registration .button:hover {
+  text-shadow: 2px 0px 0px #000;
+  box-shadow: 0px 0px 3px 1px #008CBA;
+}
+
+//::-webkit-input-placeholder { /* WebKit browsers */
+//  color:    #008CBA;
+//}
+//:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+//  color:    #008CBA;
+//  opacity:  1;
+//}
+//::-moz-placeholder { /* Mozilla Firefox 19+ */
+//  color:    #008CBA;
+//  opacity:  1;
+//}
+//:-ms-input-placeholder { /* Internet Explorer 10+ */
+//  color:    #008CBA;
+//}
+
+#login input, #registration input {
+  width: 190px;
+  height: 12px;
+  padding: 10px;
+  color: #008CBA;
+  font-size: 17px;
+  border: 1px solid #008CBA;
+}
+
+#login input:active, #registration input:active{
+  color: grey;
+}
+
+.form_register, .form_login {
+  text-align: center;
+  color: #008CBA;
+  margin-top: 35px;
+  text-decoration: none;
+  font-size: 14px;
+  display: block;
+}
+
+.form_register:hover, .form_login:hover {
+  text-shadow: 1px 0px 0px #000;
+  text-decoration: underline;
+}

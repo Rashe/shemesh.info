@@ -1,0 +1,34 @@
+{% extends 'main_layout.html' %}
+{% block title %}To Do Glist{% endblock %}
+{% block nav %}
+{% include 'nav.html' with data%}
+{% endblock %}
+
+{% block content %}
+<section id="registration">
+    <h1>Registration</h1>
+
+    <div data-alert id="error_disp" class="alert-box">
+        <p></p>
+        <span class="close">&times;</span>
+    </div>
+    <form name="registration_form">
+
+        <div class="inp_holder">
+            <input name="username" type="text" placeholder="Username" required/>
+        </div>
+        <div class="inp_holder">
+            <input name="email" type="email" placeholder="Email" required/>
+        </div>
+        <div class="inp_holder">
+            <input name="password" type="password" placeholder="Password" required/>
+        </div>
+        <div class="but_holder">
+            <button class="button">Register</button>
+        </div>
+    </form>
+
+    <a href="/login" class="form_login">Login</a>
+
+</section>
+{% endblock %}

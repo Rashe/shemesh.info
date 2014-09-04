@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
+
 
 //app.use(favicon());
 app.use(bodyParser.json());
@@ -40,6 +40,8 @@ app.use(session({
     },
     secret: '99232333323hujhujhujhujhujhujh'
 }));
+
+app.use('/', routes);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
