@@ -33,6 +33,15 @@ router.get('/registration', function (req, res) {
     }
 });
 
+router.get('/services', function (req, res) {
+    if (!req.session.user) {
+        res.redirect('/login');
+    }
+    else {
+        res.render('services', {data: data_content, css: 'services'});
+    }
+});
+
 
 //POST
 

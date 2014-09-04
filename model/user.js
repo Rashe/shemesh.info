@@ -1,4 +1,3 @@
-var crypto = require('crypto');
 var mongoose = require('../model/mongoose');
 
 var schema = mongoose.Schema({
@@ -21,10 +20,6 @@ var schema = mongoose.Schema({
     }
 });
 
-schema.methods.encryptPassword = function(username, password ) {
-    return crypto.createHmac('sha1', username).update(password).digest('hex');
-};
-
 schema.statics.authorize = function(username, password, callback) {
     console.log('huj 12' );
     var User = this;
@@ -41,24 +36,28 @@ schema.statics.authorize = function(username, password, callback) {
     });
 };
 
-schema.statics.register = function(username, password, email, callback){
+schema.statics.register = function(username, email, password, callback){
+    console.log('huj33' );
+    var User = this,
+        _that = this;
+
     User.findOne({username: username}, function (err, userDb, next) {
-        var User = this;
         if (userDb != null) {
+            console.log('huj311111' );
             callback('already');
         }
         else {
-            var hashedPass = this.encryptPassword(username, password);
-            var createUser = new User({
+
+                var createUser = new User({
                 username: username,
                 email: email,
-                password: hashedPass
+                password: password
             });
 
             createUser.save(function (err) {
                 if (err) throw  err;
             });
-            callback('ok');
+            console.log('huj1111111111' );
         }
     });
 };
