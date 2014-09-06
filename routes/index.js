@@ -38,7 +38,8 @@ router.get('/services', function (req, res) {
         res.redirect('/login');
     }
     else {
-        res.render('services', {data: data_content, css: 'services'});
+        require('../controller/services').get(req, res);
+        //res.render('services', {data: data_content, css: 'services'});
     }
 });
 

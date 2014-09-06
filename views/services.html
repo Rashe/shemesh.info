@@ -1,0 +1,57 @@
+{% extends 'layout/services_layout.html' %}
+{% block title %}To Do Glist{% endblock %}
+{% block nav %}
+{% include 'parts/nav_inside.html' with data%}
+{% endblock %}
+
+{% block content %}
+<section id="services">
+
+    {#
+    <div class="item_toolti">{{ item|json_encode }}</div>
+    #}
+
+    <div class="item_toolti">{{ users_data |json_encode }}</div>
+    <section class="widget info">
+        <div class="widget_heading">
+            <i class="fa fa-info-circle"></i>
+            <h3>Info and Messages</h3>
+        </div>
+        <div class="widget_cont">
+            <p>Your last login was in : 24/09/2014, from : 192.09.92.92</p>
+        </div>
+    </section>
+
+    <section class="widget settings">
+        <div class="widget_heading">
+            <i class="fa fa-cog"></i>
+            <h3>Settings</h3>
+        </div>
+        <div class="widget_cont">
+            <div class="turn_reg">
+                <button>Turn off Registration</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="widget users">
+        <div class="widget_heading">
+            <i class="fa fa-users"></i>
+            <h3>Users</h3>
+        </div>
+        <div class="widget_cont">
+            <div class="user_info">
+                <p>Vasia</p>
+            </div>
+            <div class="user_info">
+                <p>Petya</p>
+            </div>
+            <div class="user_info">
+                <p>Mudak</p>
+            </div>
+        </div>
+    </section>
+
+
+</section>
+{% endblock %}

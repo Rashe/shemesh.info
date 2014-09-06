@@ -17,8 +17,22 @@ var schema = mongoose.Schema({
     dateCreate: {
         type: Date,
         default: Date.now
+    },
+    lastLogin:{
+        type: Date,
+        default: Date.now
+    },
+    lastIp:{
+        type: String
     }
 });
+
+schema.statics.showAllUsers = function(callback){
+    var User = this;
+    User.find({}, function(err, users) {
+       callback(users);
+    });
+};
 
 schema.statics.authorize = function (login_data, callback) {
     var User = this;
@@ -29,6 +43,8 @@ schema.statics.authorize = function (login_data, callback) {
             callback(2);
         }
         else {
+            userDb.lastLogin = new Date();
+            userDb.save();
             callback();
         }
     });
@@ -36,7 +52,6 @@ schema.statics.authorize = function (login_data, callback) {
 
 schema.statics.register = function (regis_data, callback) {
     var User = this;
-
     User.findOne({username: regis_data[0]}, function (err, userDb, next) {
         if (userDb != null) {
             callback(false);
@@ -55,5 +70,10 @@ schema.statics.register = function (regis_data, callback) {
         }
     });
 };
+
+schema.pre('save', function(next){
+    this.lastLogin = new Date();
+    next();
+});
 
 exports.User = mongoose.model('User', schema);

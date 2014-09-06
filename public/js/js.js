@@ -12,13 +12,20 @@
                 search_form: '.search_form',
                 fuck: '.fuck',
                 here: '.here',
-                nav: 'nav',
+                nav_outside: '#outside',
                 top_list: '.top_list',
                 nav_text: '.nav_text',
-                login: '#login'
+                login: '#login',
+                clopener: '.clopener',
+                nav_inside: '#inside',
+                services: '#services'
+
             },
             classes: {
-                nav_text_wide: 'nav_text_wide'
+                nav_text_wide: 'nav_text_wide',
+                hidden: 'hidden',
+                clops: 'clopener_pos',
+                clopener_ser: 'clopener_ser'
             }
 
         };
@@ -28,6 +35,7 @@
             //this.main.placeholder(_selectors.placeholder);
             //this.main.search_shit();
             this.main.nav_hover();
+            this.main.clopener();
             //this.main.createWidget();
             //this.main.next();
             //this.main.prev();
@@ -82,7 +90,7 @@
             },
             nav_hover: function () {
                 var _selectors = _that.settings.selectors,
-                    nav = $(_selectors.nav),
+                    nav = $(_selectors.nav_outside),
                     top_list = $(_selectors.top_list),
                     nav_text = $(_selectors.nav_text),
                     nav_text_wide = _that.settings.classes.nav_text_wide;
@@ -99,6 +107,28 @@
                         nav_text.removeClass(nav_text_wide);
                     }
                 );
+            },
+            clopener: function () {
+                var _selectors = _that.settings.selectors,
+                    _classes = _that.settings.classes,
+                    nav = $(_selectors.nav_inside),
+                    clopener = $(_selectors.clopener),
+                    hidden = _classes.hidden,
+                    clops = _classes.clops,
+                    services= $(_selectors.services),
+                    clopener_ser = _classes.clopener_ser;
+                clopener.on("click", function () {
+                    if (nav.hasClass(hidden)) {
+                        nav.removeClass(hidden);
+                        clopener.removeClass(clops);
+                        services.removeClass(clopener_ser);
+                    }
+                    else {
+                        nav.addClass(hidden);
+                        clopener.addClass(clops);
+                        services.addClass(clopener_ser);
+                    }
+                });
             }
         }
     };
@@ -109,7 +139,7 @@
 $(document).ready(function () {
     shmsh.init({debug: true});
 
-    $('.search_btn').on('click', function(){
+    $('.search_btn').on('click', function () {
         shmsh.main.search_shit()
     });
     $(".close").on("click", function () {

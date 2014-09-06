@@ -1,12 +1,12 @@
-{% extends 'main_layout.html' %}
+{% extends 'layout/main_layout.html' %}
 {% block title %}To Do Glist{% endblock %}
 {% block nav %}
-{% include 'nav.html' with data%}
+{% include 'parts/nav.html' with data%}
 {% endblock %}
 
 {% block content %}
 <section id="login">
-    <h1>Login</h1>
+    <h1>{{data.login_h1}}</h1>
 
     <div data-alert id="error_disp" class="alert-box">
         <p></p>
@@ -15,17 +15,17 @@
     <form name="login_form">
 
         <div class="inp_holder">
-            <input name="username" type="text" placeholder="Username" required/>
+            <input name="username" type="text" placeholder="{{data.login_userPl}}" required/>
         </div>
         <div class="inp_holder">
-            <input name="password" type="text" placeholder="Password" required/>
+            <input name="password" type="password" placeholder="{{data.login_passPl}}" required/>
         </div>
         <div class="but_holder">
-            <button class="button">Login</button>
+            <button class="button">{{data.login_button}}</button>
         </div>
     </form>
 
-    <a href="/registration" class="form_register">Registration</a>
+    <a href="/registration" class="form_register">{{data.login_regL}}</a>
 
 </section>
 {% endblock %}

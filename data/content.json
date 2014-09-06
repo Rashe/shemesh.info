@@ -14,7 +14,25 @@
     "about_p": "There is nothing yet",
     "browser_h1": "Please start using a normal browser",
     "browser": "One of them is",
-    "browser_link": "Chrome"
+    "browser_link": "Chrome",
+    "reg_h1": "Registration",
+    "reg_userPl": "Username",
+    "reg_emalPl": "Email",
+    "reg_passPl": "Password",
+    "reg_button": "Register",
+    "reg_loginL": "Login",
+    "login_h1" : "Login",
+    "login_userPl" : "Username",
+    "login_passPl" : "Password",
+    "login_button" : "Login",
+    "login_regL" : "Registration"
+
+
+
+
+
+
+
 
 
 }
