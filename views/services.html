@@ -11,7 +11,6 @@
     <div class="item_toolti">{{ item|json_encode }}</div>
     #}
 
-    <div class="item_toolti">{{ users_data |json_encode }}</div>
     <section class="widget info">
         <div class="widget_heading">
             <i class="fa fa-info-circle"></i>
@@ -40,15 +39,19 @@
             <h3>Users</h3>
         </div>
         <div class="widget_cont">
+            {% for item in users_data %}
             <div class="user_info">
-                <p>Vasia</p>
+                <div class="user_infoUN">
+                    <p>{{item.username}}</p>
+                    <div class="user_infoTT">
+                        <p>Email: {{item.email}}</p>
+                        <p>Last login: {{item.lastLogin |date('jS \o\f F')}} </p>
+                        <p>Date created: {{item.dateCreate |date('jS \o\f F')}}</p>
+                    </div>
+                </div>
             </div>
-            <div class="user_info">
-                <p>Petya</p>
-            </div>
-            <div class="user_info">
-                <p>Mudak</p>
-            </div>
+            {% endfor %}
+
         </div>
     </section>
 

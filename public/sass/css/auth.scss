@@ -95,7 +95,7 @@ $login_color: #5C5C5C;
   color: grey;
 }
 
-.form_register, .form_login {
+.form_register, .form_login, .fp_pass {
   text-align: center;
   color: #008CBA;
   margin-top: 35px;
@@ -107,4 +107,8 @@ $login_color: #5C5C5C;
 .form_register:hover, .form_login:hover {
   text-shadow: 1px 0px 0px #000;
   text-decoration: underline;
+}
+
+.fp_pass{
+  margin-top: 7px;
 }

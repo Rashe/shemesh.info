@@ -81,7 +81,7 @@ hr{
   font-size: 20px;
   z-index: 29;
   cursor: pointer;
-  top: -21px;
+  top: 0px;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
@@ -171,4 +171,67 @@ hr{
 .turn_reg button:hover{
   background-color: #3071a9;
   border-color: #285e8e;
+}
+
+.user_infoUN{
+  position: relative;
+}
+
+.user_infoUN> p{
+  color: $services_color;
+}
+
+.user_infoTT{
+   display: none;
+  position: absolute;
+  width: 200px;
+  top: -107px;
+  left: -1px;
+//  background: #333;
+//  top: -93px;
+//  left: 10px;
+//  @include borderRadius(4px);
+}
+
+.user_infoUN:hover .user_infoTT{
+  display: block;
+}
+
+.user_infoTT p{
+  margin: 7px;
+  color: #fff;
+}
+
+.user_infoTT {
+//  position: relative;
+  background: #333;
+  border: 4px solid #008CBA;
+}
+.user_infoTT:after, .user_infoTT:before {
+  top: 100%;
+  left: 10%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.user_infoTT:after {
+  border-color: rgba(51, 51, 51, 0);
+  border-top-color: #333;
+  border-width: 11px;
+  margin-left: -18px;
+}
+.user_infoTT:before {
+  border-color: rgba(0, 140, 186, 0);
+  border-top-color: #008CBA;
+  border-width: 15px;
+  margin-left: -22px;
+}
+
+.logout{
+  margin-top: 50px;
+  border-top: 1px solid;
 }

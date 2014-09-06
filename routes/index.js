@@ -15,6 +15,10 @@ router.get('/user_normal', function (req, res) {
     res.render('user_normal', {data: data_content, css: 'user_normal'});
 });
 
+router.get('/forgot_pass', function (req, res) {
+    res.render('forgot_pass', {data: data_content, css: 'forgot_pass'});
+});
+
 router.get('/login', function (req, res) {
     if (!req.session.user) {
         res.render('login', {data: data_content, css: 'login'});
@@ -43,6 +47,10 @@ router.get('/services', function (req, res) {
     }
 });
 
+router.get('/logout', function (req, res) {
+    delete req.session.user;
+    res.redirect('/');
+});
 
 //POST
 
@@ -53,4 +61,5 @@ router.post('/registration', function (req, res) {
 router.post('/login', function (req, res) {
     require('../controller/login').post(req, res);
 });
+
 module.exports = router;
