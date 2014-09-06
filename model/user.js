@@ -20,44 +20,38 @@ var schema = mongoose.Schema({
     }
 });
 
-schema.statics.authorize = function(username, password, callback) {
-    console.log('huj 12' );
+schema.statics.authorize = function (login_data, callback) {
     var User = this;
-    console.log('huj 13' );
-    User.findOne({username: username}, function (err, userDb, next) {
+    User.findOne({username: login_data[0]}, function (err, userDb, next) {
         if (userDb == null) {
-            callback('no_user');
-        } else if (userDb.password != password) {
-            callback('pass_wrong');
+            callback(1);
+        } else if (userDb.password != login_data[1]) {
+            callback(2);
         }
         else {
-          callback('ok');
+            callback();
         }
     });
 };
 
-schema.statics.register = function(username, email, password, callback){
-    console.log('huj33' );
-    var User = this,
-        _that = this;
+schema.statics.register = function (regis_data, callback) {
+    var User = this;
 
-    User.findOne({username: username}, function (err, userDb, next) {
+    User.findOne({username: regis_data[0]}, function (err, userDb, next) {
         if (userDb != null) {
-            console.log('huj311111' );
-            callback('already');
+            callback(false);
         }
         else {
-
-                var createUser = new User({
-                username: username,
-                email: email,
-                password: password
+            var createUser = new User({
+                username: regis_data[0],
+                email: regis_data[1],
+                password: regis_data[2]
             });
 
             createUser.save(function (err) {
                 if (err) throw  err;
             });
-            console.log('huj1111111111' );
+            callback();
         }
     });
 };

@@ -4,7 +4,8 @@
         this.settings = {
             degug: true,
             selectors: {
-                login: '#login'
+                login: '#login',
+                error_id: '#error_disp'
             },
             classes: {}
         };
@@ -32,13 +33,17 @@
                             403: function (jqXHR) {
                                 //var error = JSON.parse(jqXHR.responseText);
                                 var error = jqXHR.responseText;
-                                formErrorDisp(error);
+                                _that.main.error_disp(error);
                                 //$('.error', form).html(error.message);
                             }
                         }
                     });
                     return false;
                 });
+            },
+            error_disp: function (error_message) {
+                $(_that.settings.selectors.error_id).show();
+                $(_that.settings.selectors.error_id + ' p').text(error_message);
             }
         }
     };

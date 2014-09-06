@@ -46,7 +46,10 @@ router.get('/services', function (req, res) {
 //POST
 
 router.post('/registration', function (req, res) {
-    console.log('huj 2' );
     require('../controller/registration').post(req, res);
+});
+
+router.post('/login', function (req, res) {
+    require('../controller/login').post(req, res);
 });
 module.exports = router;
