@@ -18,19 +18,27 @@ var schema = mongoose.Schema({
         type: Date,
         default: Date.now
     },
-    lastLogin:{
+    lastLogin: {
         type: Date,
         default: Date.now
     },
-    lastIp:{
+    lastIp: {
         type: String
     }
 });
 
-schema.statics.showAllUsers = function(callback){
+schema.statics.showAllUsers = function (callback) {
     var User = this;
-    User.find({}, function(err, users) {
-       callback(users);
+    User.find({}, function (err, users) {
+        callback(users);
+    });
+};
+
+schema.statics.lastInfos = function (username, callback) {
+    var User = this;
+    User.findOne({username: username}, function (err, userDb, next) {
+        callback(userDb.lastLogin);
+
     });
 };
 
@@ -71,7 +79,7 @@ schema.statics.register = function (regis_data, callback) {
     });
 };
 
-schema.pre('save', function(next){
+schema.pre('save', function (next) {
     this.lastLogin = new Date();
     next();
 });

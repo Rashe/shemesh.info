@@ -14,16 +14,18 @@
     <section class="widget info">
         <div class="widget_heading">
             <i class="fa fa-info-circle"></i>
+
             <h3>Info and Messages</h3>
         </div>
         <div class="widget_cont">
-            <p>Your last login was in : 24/09/2014, from : 192.09.92.92</p>
+            <p>Your last login was in : {{users_data.one |date('jS \o\f F') }}, from : Soon</p>
         </div>
     </section>
 
     <section class="widget settings">
         <div class="widget_heading">
             <i class="fa fa-cog"></i>
+
             <h3>Settings</h3>
         </div>
         <div class="widget_cont">
@@ -36,16 +38,21 @@
     <section class="widget users">
         <div class="widget_heading">
             <i class="fa fa-users"></i>
+
             <h3>Users</h3>
         </div>
         <div class="widget_cont">
-            {% for item in users_data %}
+            {% for item in users_data.two %}
+            <!--<div>{{item.one | json_encode }}</div>-->
             <div class="user_info">
                 <div class="user_infoUN">
                     <p>{{item.username}}</p>
+
                     <div class="user_infoTT">
                         <p>Email: {{item.email}}</p>
+
                         <p>Last login: {{item.lastLogin |date('jS \o\f F')}} </p>
+
                         <p>Date created: {{item.dateCreate |date('jS \o\f F')}}</p>
                     </div>
                 </div>
