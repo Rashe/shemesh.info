@@ -37,8 +37,11 @@ schema.statics.showAllUsers = function (callback) {
 schema.statics.lastInfos = function (username, callback) {
     var User = this;
     User.findOne({username: username}, function (err, userDb, next) {
-        callback(userDb.lastLogin);
-
+        if (userDb.lastLogin == null) {
+            callback(userDb.dateCreate);
+        } else {
+            callback(userDb.lastLogin);
+        }
     });
 };
 

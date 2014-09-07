@@ -7,6 +7,7 @@ $login_color: #5C5C5C;
   margin: 90px auto 0;
   background: $login_color;
   min-height: 300px;
+  padding-bottom: 11px;
   box-shadow: 0px 0px 13px 13px rgba(2, 1, 1, 0.5);
   @include borderRadius(4px);
 }
@@ -104,7 +105,7 @@ $login_color: #5C5C5C;
   display: block;
 }
 
-.form_register:hover, .form_login:hover {
+.form_register:hover, .form_login:hover, .fp_pass:hover {
   text-shadow: 1px 0px 0px #000;
   text-decoration: underline;
 }

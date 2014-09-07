@@ -9,6 +9,13 @@
 
     {#
     <div class="item_toolti">{{ item|json_encode }}</div>
+
+    {% if false %}
+    statement1
+    {% else %}
+    statement2
+    {% endif %}
+
     #}
 
     <section class="widget info">
@@ -18,7 +25,7 @@
             <h3>Info and Messages</h3>
         </div>
         <div class="widget_cont">
-            <p>Your last login was in : {{users_data.one |date('jS \o\f F') }}, from : Soon</p>
+            <p>Your last login was in : {{users_data.last_info |date('jS \o\f F') }}, from : Soon</p>
         </div>
     </section>
 
@@ -29,8 +36,15 @@
             <h3>Settings</h3>
         </div>
         <div class="widget_cont">
+            <div>
+                <p>Last change by: {{users_data.reg_settings.whoChanged}}</p>
+            </div>
             <div class="turn_reg">
-                <button>Turn off Registration</button>
+                {% if users_data.reg_settings.registration == true %}
+                <button>Turn off registration</button>
+                {% else %}
+                <button>Turn on registration</button>
+                {% endif %}
             </div>
         </div>
     </section>
@@ -42,7 +56,7 @@
             <h3>Users</h3>
         </div>
         <div class="widget_cont">
-            {% for item in users_data.two %}
+            {% for item in users_data.showallUsers %}
             <!--<div>{{item.one | json_encode }}</div>-->
             <div class="user_info">
                 <div class="user_infoUN">
