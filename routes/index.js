@@ -58,6 +58,10 @@ router.post('/registration', function (req, res) {
     require('../controller/registration').post(req, res);
 });
 
+router.post('/reg_onOff', function (req, res) {
+    require('../controller/services').post(req, res);
+});
+
 router.post('/login', function (req, res) {
     require('../controller/login').post(req, res);
 });

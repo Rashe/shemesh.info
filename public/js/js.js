@@ -129,6 +129,16 @@
                         services.addClass(clopener_ser);
                     }
                 });
+            },
+            send_ajax: function (ajax_data, where) {
+                      $.ajax({
+                        url: where,
+                        method: "POST",
+                        data: ajax_data,
+                        complete: function () {
+                        }
+                    });
+                    return false;
             }
         }
     };
@@ -142,7 +152,14 @@ $(document).ready(function () {
     $('.search_btn').on('click', function () {
         shmsh.main.search_shit()
     });
-    $(".close").on("click", function () {
+    $('.close').on('click', function () {
         $(this).parent().hide();
     });
+    $('.turn_reg button').on('click', function(){
+       shmsh.main.send_ajax({ huj:"givi"}, '/reg_onOff');
+    });
+
+
 });
+
+//{ name: "John", location: "Boston" }
