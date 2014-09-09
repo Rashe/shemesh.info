@@ -18,7 +18,8 @@
                 login: '#login',
                 clopener: '.clopener',
                 nav_inside: '#inside',
-                services: '#services'
+                services: '#services',
+                turn_reg_but: '.turn_reg button'
 
             },
             classes: {
@@ -115,7 +116,7 @@
                     clopener = $(_selectors.clopener),
                     hidden = _classes.hidden,
                     clops = _classes.clops,
-                    services= $(_selectors.services),
+                    services = $(_selectors.services),
                     clopener_ser = _classes.clopener_ser;
                 clopener.on("click", function () {
                     if (nav.hasClass(hidden)) {
@@ -131,14 +132,27 @@
                 });
             },
             send_ajax: function (ajax_data, where) {
-                      $.ajax({
-                        url: where,
-                        method: "POST",
-                        data: ajax_data,
-                        complete: function () {
-                        }
-                    });
-                    return false;
+                $.ajax({
+                    url: where,
+                    method: "POST",
+                    data: ajax_data,
+                    complete: function () {
+                    }
+                });
+                return false;
+            },
+            turn_reg_text: function () {
+                var _selectors = _that.settings.selectors,
+                    _turn_reg_but = $(_selectors.turn_reg_but),
+                    s_text = 'Turn off registration',
+                    s_text2 = 'Turn on registration',
+                    cur_text = _turn_reg_but.text();
+                  if(cur_text == s_text){
+                      cur_text = s_text2;
+                  }else{
+                      cur_text = s_text;
+                  }
+                _turn_reg_but.text(cur_text);
             }
         }
     };
@@ -155,8 +169,9 @@ $(document).ready(function () {
     $('.close').on('click', function () {
         $(this).parent().hide();
     });
-    $('.turn_reg button').on('click', function(){
-       shmsh.main.send_ajax({ huj:"givi"}, '/reg_onOff');
+    $(shmsh.settings.selectors.turn_reg_but).on('click', function () {
+        shmsh.main.send_ajax({huj: "givi"}, '/reg_onOff');
+        shmsh.main.turn_reg_text();
     });
 
 
