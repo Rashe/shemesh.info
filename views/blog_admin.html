@@ -1,0 +1,83 @@
+{% extends 'layout/services_layout.html' %}
+{% block title %}To Do Glist{% endblock %}
+{% block nav %}
+{% include 'parts/nav_inside.html' with data%}
+{% endblock %}
+
+{% block content %}
+<section id="services" xmlns="http://www.w3.org/1999/html">
+
+
+    <section class="widget posts_wid">
+        <div class="widget_heading">
+            <i class="fa fa-graduation-cap"></i>
+
+            <h3>Blog posts</h3>
+        </div>
+        <div class="widget_cont">
+
+            {% if blog_admin.all_posts.def_data %}
+            <div class="posts_stat">
+            <p>{{ blog_admin.all_posts.def_data }}</p>
+            </div>
+            {% else %}
+
+
+            <div class="posts_stat">
+                <div class="posts_stat_link">
+                    <a href="#">Girst ubkkwe</a>
+                </div>
+                <div class="posts_stat_stat">
+                    <span>Date Created: 9th of September</span>
+
+                    <span class="status_published">Status: Published</span>
+                </div>
+            </div>
+
+            <div class="posts_stat">
+                <div class="posts_stat_link">
+                    <a href="#">Girst ubkkwe Girst ubkkwe Girst ubkkwe Girst ubkkwe Girst ubkkwe Girst ubkkwe Girst ubkkwe</a>
+                </div>
+                <div class="posts_stat_stat">
+                    <span>Date Created: 9th of September</span>
+
+                    <span class="status_unpublished">Status: Unpublished</span>
+                </div>
+            </div>
+            {% endif %}
+
+        </div>
+    </section>
+
+    <section class="widget posts_wid">
+        <div class="widget_heading">
+            <i class="fa fa-graduation-cap"></i>
+
+            <h3>Blog posts edit</h3>
+        </div>
+        <div class="widget_cont">
+            {% if blog_admin.all_posts.def_data %}
+            <div class="posts_stat">
+                <p>{{ blog_admin.all_posts.def_data }}</p>
+            </div>
+            {% else %}
+
+            {% endif %}
+
+        </div>
+    </section>
+
+    <section class="widget posts_wid">
+        <div class="widget_heading">
+            <i class="fa fa-graduation-cap"></i>
+
+            <h3>Blog info</h3>
+        </div>
+        <div class="widget_cont">
+            <p>Posts: {{blog_admin.count_posts}}</p>
+
+        </div>
+    </section>
+
+</section>
+{% endblock %}

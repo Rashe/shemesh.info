@@ -1,0 +1,118 @@
+$blog_color: #008CBA;
+
+body.blog {
+  background: #f9f6f1;
+}
+
+.blog #aside_nav .clopener {
+  top: -20px;
+}
+
+#blogeg, #blogeg_article {
+  width: 60%;
+  margin: 0 0 0 24%;
+}
+
+.heading_row {
+  width: 100%;
+//  border-bottom: 1px solid #DDDDDD;
+}
+
+.heading_row h1 {
+  color: #6f6f6f;
+  font-size: 3em;
+}
+
+.post_wra {
+  width: 100%;
+  border-top: 1px solid #DDDDDD;
+  margin-top: 40px;
+}
+
+.article_link {
+  color: $blog_color;
+  text-decoration: none;
+  font-size: 1.5em;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.article_link:hover {
+  text-shadow: 1px 2px 2px #000;
+  text-decoration: underline;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.credit {
+
+}
+
+.credit p {
+  color: #222;
+  font-weight: 800;
+  font-size: 1em;
+  display: inline-block;
+}
+
+.comments{
+  display: inline-block;
+  color: $blog_color;
+  margin-left: 5px;
+}
+
+.thePost {
+
+}
+
+.thePost p {
+  color: #222;
+  font-size: 1.6em;
+}
+
+.thePost a{
+  color: $blog_color;
+}
+
+.thePost a:hover{
+  text-shadow: 1px 0px 0px #000;
+  text-decoration: underline;
+}
+
+.blog #inside {
+  width: 13%;
+}
+
+.blog #aside_nav .clopener {
+  left: 13.1%;
+  position: fixed;
+}
+
+.blog #inside.hidden {
+  width: 0;
+}
+
+.blog #aside_nav .clopener.clopener_pos {
+  left: 0;
+}
+
+#aside_nav a {
+  font-size: 1.3em;
+}
+
+.readMore{
+  color: $blog_color;
+  font-size: 1.6em;
+  text-decoration: underline;
+  position: relative;
+//  top: -21px;
+}
+
+.readMore:hover, .comments:hover{
+  text-shadow: 1px 0px 0px #000;
+  text-decoration: underline;
+}

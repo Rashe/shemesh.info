@@ -52,6 +52,35 @@ router.get('/logout', function (req, res) {
     res.redirect('/');
 });
 
+router.get('/blog', function (req, res) {
+    res.render('blog', {data: data_content, css: 'blog'});
+});
+
+router.get('/blog_article', function (req, res) {
+    res.render('blog_article', {data: data_content, css: 'blog'});
+});
+
+router.get('/blog_admin', function (req, res) {
+    if (!req.session.user) {
+        res.redirect('/login');
+    }
+    else {
+        require('../controller/blog_admin').get(req, res);
+        //res.render('blog', {data: data_content, css: 'blog'});
+    }
+});
+
+router.get('/blog_make_post', function (req, res) {
+    if (!req.session.user) {
+        res.redirect('/login');
+    }
+    else {
+        //require('../controller/blog_make_post').get(req, res);
+        res.render('blog_make_post', {data: data_content, css: 'blog_make_post'});
+    }
+});
+
+
 //POST
 
 router.post('/registration', function (req, res) {

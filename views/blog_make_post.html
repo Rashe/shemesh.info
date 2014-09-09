@@ -1,0 +1,29 @@
+{% extends 'layout/services_layout.html' %}
+{% block title %}To Do Glist{% endblock %}
+{% block nav %}
+{% include 'parts/nav_inside.html' with data%}
+{% endblock %}
+
+{% block content %}
+<section id="services">
+
+    <section class="make_post">
+        <form >
+            <div>
+                <input type="text" placeholder="Title" required/>
+            </div>
+            <div>
+                <textarea placeholder="Post Body" required></textarea>
+
+            </div>
+
+        </form>    
+        
+        
+    </section>
+    
+    
+    
+    
+</section>
+{% endblock %}

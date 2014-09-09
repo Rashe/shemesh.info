@@ -1,7 +1,7 @@
 $services_color: #008CBA;
 @import "mixins";
 
-body.services{
+body.services, body.blog_admin, body.blog_make_post{
   background: #f9f6f1;
   width: 100%;
 }
@@ -48,7 +48,7 @@ hr{
 
 #aside_nav{
   position: relative;
-  width: 150px;
+//  width: 150px;
 }
 
 #aside_nav ul{
@@ -78,7 +78,24 @@ hr{
   font-size: 20px;
   z-index: 29;
   cursor: pointer;
-  top: 0px;
+  top: -20px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.services #aside_nav .clopener{
+  top: 0;
+}
+
+.blog_admin #aside_nav .clopener{
+  top: -20px;
+}
+
+#aside_nav .clopener:hover{
+  color: #3071a9;
+  text-shadow: 2px 1px 0px #000;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
@@ -142,6 +159,7 @@ hr{
   display: inline-block;
   margin: 0 4px 0 12px;
   font-size: 17px;
+  color: #008CBA;
 }
 
 .widget_cont{
@@ -235,4 +253,44 @@ hr{
 .logout{
   margin-top: 50px;
   border-top: 1px solid;
+}
+
+.blog_admin .posts_wid a{
+  color: #008CBA;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.posts_stat{
+  width: 100%;
+  border-bottom: 1px solid #d6d6d6;
+  padding: 3px 0;
+}
+
+.posts_stat_link, .posts_stat_stat{
+  display: inline-block;
+  vertical-align: top;
+  width: 49%;
+}
+
+.posts_stat_link{
+  width: 40%;
+  overflow: hidden;
+}
+
+.status_unpublished{
+  color: #C80000;
+}
+
+.status_published{
+  color: #007f00;
+}
+
+.make_post div{
+  margin: 2% 0;
+}
+
+.make_post input, .make_post textarea{
+  width: 40%;
+  padding: 0.7%;
 }
