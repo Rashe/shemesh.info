@@ -7,10 +7,10 @@ var schema = mongoose.Schema({
     post_title: {
         type: String
     },
-    post_body: {
+    post_link: {
         type: String
     },
-    post_link: {
+    post_body: {
         type: String
     },
     post_published: {
@@ -33,7 +33,6 @@ schema.statics.showAllPostsAdmin = function (callback) {
     var Blog = this;
     Blog.find({}, function (err, posts) {
         if (posts.length != 0) {
-            console.log('huj here', posts);
             callback(posts);
         } else {
             var def_data = {
@@ -57,43 +56,24 @@ schema.statics.countPostsAdmin = function (callback) {
         }
     });
 };
-//
-//schema.statics.lastInfos = function (Blogname, callback) {
-//    var Blog = this;
-//    Blog.findOne({Blogname: Blogname}, function (err, BlogDb, next) {
-//        if (BlogDb.lastLogin == null) {
-//            callback(BlogDb.dateCreate);
-//        } else {
-//            callback(BlogDb.lastLogin);
-//        }
-//    });
-//};
-//
-//schema.statics.authorize = function (login_data, callback) {
-//    var Blog = this;
-//    Blog.findOne({Blogname: login_data[0]}, function (err, BlogDb, next) {
-//        if (BlogDb == null) {
-//            callback(1);
-//        } else if (BlogDb.password != login_data[1]) {
-//            callback(2);
-//        }
-//        else {
-//            BlogDb.lastLogin = new Date();
-//            BlogDb.save();
-//            callback();
-//        }
-//    });
-//};
-//
+
 schema.statics.create_post = function (post_data, callback) {
-    var Blog = this;
-    var createBlog = new Blog({
-        Blogname: regis_data[0],
-        email: regis_data[1],
-        password: regis_data[2]
+    var Blog = this, publish;
+    if(post_data[4] == null){
+        publish = false;
+    }else{
+        publish = true;
+    }
+
+    var create_post = new Blog({
+        post_user: post_data[0],
+        post_title: post_data[1],
+        post_link: post_data[2],
+        post_body: post_data[3],
+        post_published: publish
     });
 
-    createBlog.save(function (err) {
+    create_post.save(function (err) {
         if (err) throw  err;
     });
     callback();

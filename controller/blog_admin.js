@@ -1,5 +1,3 @@
-//var User = require('../model/user').User;
-//var Setti = require('../model/settings').Setti;
 var Blog = require('../model/blog').Blog;
 var async = require('async');
 var errors = require('../data/errors');

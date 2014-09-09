@@ -73,7 +73,7 @@ hr{
 
 #aside_nav .clopener{
   color: $services_color;
-  position: absolute;
+  position: fixed;
  left: 152px;
   font-size: 20px;
   z-index: 29;
@@ -180,14 +180,14 @@ hr{
   margin-top: 15px;
 }
 
-.turn_reg button{
+.turn_reg button, .make_post button{
   color: #fff;
   background-color: #428bca;
   padding: 6px 12px;
   border: 1px solid #357ebd;
 }
 
-.turn_reg button:hover{
+.turn_reg button:hover, .make_post button:hover{
   background-color: #3071a9;
   border-color: #285e8e;
 }
@@ -285,6 +285,9 @@ hr{
 .status_published{
   color: #007f00;
 }
+.make_post{
+  position: relative;
+}
 
 .make_post div{
   margin: 2% 0;
@@ -293,4 +296,28 @@ hr{
 .make_post input, .make_post textarea{
   width: 40%;
   padding: 0.7%;
+}
+
+.make_post button{
+  display: block;
+  margin-top: 10px;
+}
+
+div.post_pref{
+  position: absolute;
+  top: 1px;
+  left: 44%;
+  margin: 0;
+}
+
+.post_pref label{
+  display: inline-block;
+  color: #008CBA;
+  font-size: 17px;
+}
+
+#checkbox_publish{
+  display: inline-block;
+  width: inherit;
+  padding: 0;
 }

@@ -37,6 +37,7 @@
             //this.main.search_shit();
             this.main.nav_hover();
             this.main.clopener();
+            this.main.blog_sendForm();
             //this.main.createWidget();
             //this.main.next();
             //this.main.prev();
@@ -153,6 +154,38 @@
                       cur_text = s_text;
                   }
                 _turn_reg_but.text(cur_text);
+            },
+            blog_sendForm: function (form_name, post, href) {
+                $(document.forms[form_name]).on('submit', function () {
+                    var form = $(this);
+                    var gfff = form.serialize();
+                    console.log('huj form.serialize()', gfff);
+                    console.log('huj form', form);
+                    $('.error', form).html('');
+                    $.ajax({
+                        url: post,
+                        method: "POST",
+                        data: form.serialize(),
+                        complete: function () {
+                        },
+                        statusCode: {
+                            200: function () {
+                                window.location.href = href;
+                            },
+                            403: function (jqXHR) {
+                                //var error = JSON.parse(jqXHR.responseText);
+                                var error = jqXHR.responseText;
+                                _that.main.error_disp(error);
+                                //$('.error', form).html(error.message);
+                            }
+                        }
+                    });
+                    return false;
+                });
+            },
+            error_disp: function (error_message) {
+                $(_that.settings.selectors.error_id).show();
+                $(_that.settings.selectors.error_id + ' p').text(error_message);
             }
         }
     };
@@ -173,7 +206,12 @@ $(document).ready(function () {
         shmsh.main.send_ajax({huj: "givi"}, '/reg_onOff');
         shmsh.main.turn_reg_text();
     });
-
+    if ($('#make_post_id').length > 0) {
+        shmsh.main.blog_sendForm('make_post', '/blog_make', '/blog_admin');
+    }
+    //if ($('#registration').length > 0) {
+    //    auth.main.auth_sendForm('registration_form', '/registration', '/services');
+    //}
 
 });
 

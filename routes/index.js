@@ -95,4 +95,8 @@ router.post('/login', function (req, res) {
     require('../controller/login').post(req, res);
 });
 
+router.post('/blog_make', function (req, res) {
+    require('../controller/blog_make').post(req, res);
+});
+
 module.exports = router;

@@ -8,14 +8,22 @@
 <section id="services">
 
     <section class="make_post">
-        <form >
+        <form name="make_post" id="make_post_id">
             <div>
-                <input type="text" placeholder="Title" required/>
+                <input type="text" name="title" placeholder="Title" required/>
             </div>
             <div>
-                <textarea placeholder="Post Body" required></textarea>
+                <input type="text" name="post_link" placeholder="Post link" required/>
+            </div>
+            <div>
+                <textarea placeholder="Post Body" name="post_body" rows="30" cols="50" required></textarea>
+            </div>
+            <div class="post_pref">
+                <label for="checkbox_publish">Publish?</label>
+                <input type="checkbox" name="publish" id="checkbox_publish" value="Publish"  />
+                <button>Make post</button>
+            </div>
 
-            </div>
 
         </form>    
         
