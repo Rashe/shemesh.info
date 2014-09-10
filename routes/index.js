@@ -53,7 +53,7 @@ router.get('/logout', function (req, res) {
 });
 
 router.get('/blog', function (req, res) {
-    res.render('blog', {data: data_content, css: 'blog'});
+    require('../controller/blog').get(req, res);
 });
 
 router.get('/blog_article', function (req, res) {

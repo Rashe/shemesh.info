@@ -65,13 +65,10 @@ body.blog {
   margin-left: 5px;
 }
 
-.thePost {
 
-}
-
-.thePost p {
+.thePost p, .thePost {
   color: #222;
-  font-size: 1.6em;
+  font-size: 1.2em;
 }
 
 .thePost a{
@@ -106,7 +103,7 @@ body.blog {
 
 .readMore{
   color: $blog_color;
-  font-size: 1.6em;
+  font-size: 1.2em;
   text-decoration: underline;
   position: relative;
 //  top: -21px;

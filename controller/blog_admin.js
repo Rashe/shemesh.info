@@ -9,7 +9,6 @@ exports.get = function (req, res) {
     async.parallel({
         all_posts: function (callback) {
             Blog.showAllPostsAdmin(function (posts) {
-                console.log('huj posts', posts);
                 callback(null, posts);
             });
         },

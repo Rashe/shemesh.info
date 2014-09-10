@@ -11,42 +11,31 @@
     <section class="widget posts_wid">
         <div class="widget_heading">
             <i class="fa fa-graduation-cap"></i>
-
             <h3>Blog posts</h3>
         </div>
         <div class="widget_cont">
 
             {% if blog_admin.all_posts.def_data %}
             <div class="posts_stat">
-            <p>{{ blog_admin.all_posts.def_data }}</p>
+                <p>{{ blog_admin.all_posts.def_data }}</p>
             </div>
             {% else %}
-
-
+            {% for item in blog_admin.all_posts %}
             <div class="posts_stat">
-                {{ blog_admin.all_posts | json_encode }}
                 <div class="posts_stat_link">
-                    <a href="#">Girst ubkkwe</a>
+                    <a href='/{{item.post_link}}'>{{item.post_link}}</a>
                 </div>
                 <div class="posts_stat_stat">
-                    <span>Date Created: 9th of September</span>
-
+                    <span>Date Created: {{item.post_dateCreate |date('jS \o\f F')}}</span>
+                    {% if item.post_published == true %}
                     <span class="status_published">Status: Published</span>
-                </div>
-            </div>
-
-            <div class="posts_stat">
-                <div class="posts_stat_link">
-                    <a href="#">Girst ubkkwe Girst ubkkwe Girst ubkkwe Girst ubkkwe Girst ubkkwe Girst ubkkwe Girst ubkkwe</a>
-                </div>
-                <div class="posts_stat_stat">
-                    <span>Date Created: 9th of September</span>
-
+                    {% else %}
                     <span class="status_unpublished">Status: Unpublished</span>
+                    {% endif %}
                 </div>
             </div>
+            {% endfor %}
             {% endif %}
-
         </div>
     </section>
 

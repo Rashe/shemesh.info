@@ -24,7 +24,7 @@ var schema = mongoose.Schema({
 
 schema.statics.showAllPosts = function (callback) {
     var Blog = this;
-    Blog.find({post_published: true}, function (err, posts) {
+    Blog.find({post_published: true}).sort({post_dateCreate: 'desc'}).exec(function (err, posts) {
         callback(posts);
     });
 };
