@@ -16,6 +16,7 @@ exports.post = function (req, res, next) {
                     email = req.body.email,
                     pass = req.body.password,
                     hashedPass = Encript(user, pass),
+                    ghh = req.body.ghhh,
                     regis_data = [user, email, hashedPass];
 
                 if (user == '' || user == null) {
@@ -24,7 +25,11 @@ exports.post = function (req, res, next) {
                 } else if (pass == '' || pass == null) {
                     res.writeHead(403, {"Content-Type": "text/plain"});
                     res.end(errors.fuck_you);
-                } else {
+                }else if(req.body.ghhh != ''){
+                    res.writeHead(403, {"Content-Type": "text/plain"});
+                    res.end(errors.fuck_you);
+                }
+                else {
                     User.register(regis_data, function (call) {
                         if (call == false) {
                             res.writeHead(403, {"Content-Type": "text/plain"});
