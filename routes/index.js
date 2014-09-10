@@ -80,6 +80,9 @@ router.get('/blog_make_post', function (req, res) {
     }
 });
 
+router.get('/blog/post/*', function (req, res) {
+    require('../controller/blog_postShow').get(req, res);
+});
 
 //POST
 

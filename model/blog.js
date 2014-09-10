@@ -59,12 +59,11 @@ schema.statics.countPostsAdmin = function (callback) {
 
 schema.statics.create_post = function (post_data, callback) {
     var Blog = this, publish;
-    if(post_data[4] == null){
+    if (post_data[4] == null) {
         publish = false;
-    }else{
+    } else {
         publish = true;
     }
-
     var create_post = new Blog({
         post_user: post_data[0],
         post_title: post_data[1],
@@ -77,13 +76,18 @@ schema.statics.create_post = function (post_data, callback) {
         if (err) throw  err;
     });
     callback();
-
 };
 
-//
-//schema.pre('save', function (next) {
-//    this.lastLogin = new Date();
-//    next();
-//});
+schema.statics.showPost = function (post_link, callback) {
+    var Blog = this;
+    Blog.findOne({post_link: post_link}, function (err, post) {
+        if (post != null) {
+            console.log('huj da' );
+            callback(post);
+        } else {
+            callback(false);
+        }
+    });
+};
 
 exports.Blog = mongoose.model('Blog', schema);
