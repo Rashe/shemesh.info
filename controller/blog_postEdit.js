@@ -8,9 +8,9 @@ exports.get = function (req, res) {
     var url_parts = url.parse(req.url, true).pathname.split("/");
     var post_url = url_parts[3];
     Blog.showPostEdit(post_url, function (callback) {
-        if(callback == false){
+        if (callback == false) {
             res.render('error', {data: data_content});
-        }else{
+        } else {
             res.render('blog_edit_post', {data: data_content, css: 'blog', post_data: callback});
         }
     });
@@ -21,11 +21,16 @@ exports.post = function (req, res, next) {
     var qRes = res,
         user = req.session.user,
         title = req.body.title,
-        post_link = req.body.post_link,//TODO: make automatic link
+        post_link = req.body.post_link,
         post_body = req.body.post_body,
         post_publish = req.body.publish,
-        post_id = req.body.post_id,
-        blog_data = [user, title, post_link, post_body, post_publish, post_id];
+        post_id = req.body.post_id;
+
+    if (post_link == '') {
+        var arr = title.toLowerCase().split(" ");
+        post_link = arr.join('_');
+    }
+    var blog_data = [user, title, post_link, post_body, post_publish, post_id];
 
     Blog.postEdit(blog_data, function (call) {
         qRes.send({});

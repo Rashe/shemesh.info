@@ -8,10 +8,16 @@ exports.post = function (req, res, next) {
     var qRes = res,
         user = req.session.user,
         title = req.body.title,
-        post_link = req.body.post_link,//TODO: make automatic link
+        post_link = req.body.post_link,
         post_body = req.body.post_body,
-        post_publish = req.body.publish,
-        blog_data = [user, title, post_link, post_body, post_publish];
+        post_publish = req.body.publish;
+
+    if (post_link == '') {
+        var arr = title.toLowerCase().split(" ");
+        post_link = arr.join('_');
+    }
+
+    var blog_data = [user, title, post_link, post_body, post_publish];
 
     Blog.create_post(blog_data, function (call) {
         qRes.send({});
