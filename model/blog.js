@@ -82,12 +82,34 @@ schema.statics.showPost = function (post_link, callback) {
     var Blog = this;
     Blog.findOne({post_link: post_link}, function (err, post) {
         if (post != null) {
-            console.log('huj da' );
             callback(post);
         } else {
             callback(false);
         }
     });
 };
+
+schema.statics.showPostEdit = function (post_link, callback) {
+    var Blog = this;
+    Blog.findOne({post_link: post_link}, function (err, post) {
+        if (post != null) {
+            callback(post);
+        } else {
+            callback(false);
+        }
+    });
+};
+
+schema.statics.postEdit = function (post_link, callback) {
+    var Blog = this;
+    Blog.findOne({post_link: post_link}, function (err, post) {
+        if (post != null) {
+            callback(post);
+        } else {
+            callback(false);
+        }
+    });
+};
+
 
 exports.Blog = mongoose.model('Blog', schema);

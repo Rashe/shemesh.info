@@ -48,7 +48,7 @@
     </section>
     <section class="widget posts_wid">
         <div class="widget_heading">
-            <i class="fa fa-graduation-cap"></i>
+            <i class="fa fa-pencil-square-o"></i>
             <h3>Blog posts edit</h3>
         </div>
         <div class="widget_cont">
@@ -60,13 +60,25 @@
             </div>
 
             {% else %}
+            {% for item in blog_admin.all_posts %}
+
+            <div class="posts_stat">
+                <div class="posts_stat_link">
+                    <a href='/blog/post/{{item.post_link}}'>{{item.post_link}}</a>
+                </div>
+                <div class="posts_stat_stat">
+                    <a class="post_edit_link" href="/blog/post_edit/{{item.post_link}}">Edit </a>
+                </div>
+            </div>
+
+            {% endfor %}
             {% endif %}
 
         </div>
     </section>
     <section class="widget posts_wid">
         <div class="widget_heading">
-            <i class="fa fa-graduation-cap"></i>
+            <i class="fa fa-pencil-square"></i>
             <h3>Blog info</h3>
         </div>
         <div class="widget_cont">

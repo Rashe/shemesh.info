@@ -83,6 +83,13 @@ router.get('/blog_make_post', function (req, res) {
 router.get('/blog/post/*', function (req, res) {
     require('../controller/blog_postShow').get(req, res);
 });
+router.get('/blog/post_edit/*', function (req, res) {
+    if (!req.session.user) {
+        res.redirect('/login');
+    }else{
+        require('../controller/blog_postEdit').get(req, res);
+    }
+});
 
 //POST
 
