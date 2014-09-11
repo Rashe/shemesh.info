@@ -14,7 +14,7 @@
     </div>
     <form name="registration_form">
         <div class="inp_holder">
-            <input name="username" type="text" placeholder="{{data.reg_userPl}}" required/>
+            <input name="username" type="text" placeholder="{{data.reg_userPl}} (a, A, 0-9)" required pattern="[A-Za-z0-9]{1,20}"/>
         </div>
         <div class="inp_holder">
             <input name="email" type="email" placeholder="{{data.reg_emalPl}}" required/>

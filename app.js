@@ -15,8 +15,15 @@ app.engine('html', swig.renderFile);
 
 app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
-app.set('view cache', false);
-swig.setDefaults({cache: false});
+
+if (app.get('env') === 'development') {
+    app.set('view cache', false);
+    swig.setDefaults({cache: false});
+}
+else {
+    app.set('view cache', true);
+    swig.setDefaults({cache: 'memory'});
+}
 //swing end
 
 // uncomment after placing your favicon in /public
