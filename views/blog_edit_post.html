@@ -11,7 +11,7 @@
         <!--<div style="color: red; font-size: 25px">-->
             <!--{{post_data | json_encode}}-->
         <!--</div>-->
-        <form name="make_post" id="make_post_id">
+        <form name="edit_post" id="edit_post_id">
             <div>
                 <input type="text" name="title" placeholder="Title" value="{{post_data.post_title}}" required/>
             </div>
@@ -21,10 +21,13 @@
             <div>
                 <textarea placeholder="Post Body" name="post_body" rows="30" cols="50" required>{{post_data.post_body}}</textarea>
             </div>
+            <div>
+                <input type="hidden" name="post_id" value="{{post_data.id}}"/>
+            </div>
             <div class="post_pref">
                 <label for="checkbox_publish">Publish?</label>
                 <input type="checkbox" name="publish" id="checkbox_publish" value="Publish"  />
-                <button>Make post</button>
+                <button>Edit post</button>
             </div>
         </form>
     </section>

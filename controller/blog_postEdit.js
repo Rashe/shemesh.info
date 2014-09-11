@@ -24,9 +24,10 @@ exports.post = function (req, res, next) {
         post_link = req.body.post_link,//TODO: make automatic link
         post_body = req.body.post_body,
         post_publish = req.body.publish,
-        blog_data = [user, title, post_link, post_body, post_publish];
+        post_id = req.body.post_id,
+        blog_data = [user, title, post_link, post_body, post_publish, post_id];
 
-    Blog.create_post(blog_data, function (call) {
+    Blog.postEdit(blog_data, function (call) {
         qRes.send({});
     });
 };

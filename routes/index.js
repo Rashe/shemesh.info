@@ -86,7 +86,7 @@ router.get('/blog/post/*', function (req, res) {
 router.get('/blog/post_edit/*', function (req, res) {
     if (!req.session.user) {
         res.redirect('/login');
-    }else{
+    } else {
         require('../controller/blog_postEdit').get(req, res);
     }
 });
@@ -107,6 +107,14 @@ router.post('/login', function (req, res) {
 
 router.post('/blog_make', function (req, res) {
     require('../controller/blog_make').post(req, res);
+});
+
+router.post('/post_edit', function (req, res) {
+    if (!req.session.user) {
+        res.redirect('/login');
+    } else {
+        require('../controller/blog_postEdit').post(req, res);
+    }
 });
 
 module.exports = router;

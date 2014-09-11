@@ -100,11 +100,22 @@ schema.statics.showPostEdit = function (post_link, callback) {
     });
 };
 
-schema.statics.postEdit = function (post_link, callback) {
-    var Blog = this;
-    Blog.findOne({post_link: post_link}, function (err, post) {
+schema.statics.postEdit = function (blog_data, callback) {
+    var Blog = this, publish;
+    Blog.findOne({_id: blog_data[5]}, function (err, post) {
         if (post != null) {
-            callback(post);
+            post.post_user = blog_data[0];
+            post.post_title = blog_data[1];
+            post.post_link = blog_data[2];
+            post.post_body = blog_data[3];
+            if(blog_data[4] == null){
+                publish = false;
+            }else{
+                publish = true;
+            }
+            post.post_published = publish;
+            post.save();
+            callback(true);
         } else {
             callback(false);
         }

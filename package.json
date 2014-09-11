@@ -17,6 +17,7 @@
         "express-session": "*",
         "node-sass": "*",
         "forever": "*",
-        "async": "*"
+        "async": "*",
+        "mongodb-uri": "*"
     }
 }

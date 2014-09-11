@@ -148,19 +148,17 @@
                     s_text = 'Turn off registration',
                     s_text2 = 'Turn on registration',
                     cur_text = _turn_reg_but.text();
-                  if(cur_text == s_text){
-                      cur_text = s_text2;
-                  }else{
-                      cur_text = s_text;
-                  }
+                if (cur_text == s_text) {
+                    cur_text = s_text2;
+                } else {
+                    cur_text = s_text;
+                }
                 _turn_reg_but.text(cur_text);
             },
             blog_sendForm: function (form_name, post, href) {
                 $(document.forms[form_name]).on('submit', function () {
                     var form = $(this);
                     var gfff = form.serialize();
-                    console.log('huj form.serialize()', gfff);
-                    console.log('huj form', form);
                     $('.error', form).html('');
                     $.ajax({
                         url: post,
@@ -209,10 +207,9 @@ $(document).ready(function () {
     if ($('#make_post_id').length > 0) {
         shmsh.main.blog_sendForm('make_post', '/blog_make', '/blog_admin');
     }
-    //if ($('#registration').length > 0) {
-    //    auth.main.auth_sendForm('registration_form', '/registration', '/services');
-    //}
-
+    if ($('#edit_post_id').length > 0) {
+        shmsh.main.blog_sendForm('edit_post', '/post_edit', '/blog_admin');
+    }
 });
 
 //{ name: "John", location: "Boston" }
