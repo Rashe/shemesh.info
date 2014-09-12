@@ -1,7 +1,10 @@
 $blog_color: #008CBA;
+$blog_font: "PT Serif", serif;
+$font_family:  Arial, "MS Trebuchet", sans-serif;
 
 body.blog {
   background: #f9f6f1;
+  font-family: $blog_font;
 }
 
 .blog #aside_nav .clopener {
@@ -14,27 +17,34 @@ body.blog {
 }
 
 .heading_row {
+  border-bottom: 1px solid #DDDDDD;
   width: 100%;
 //  border-bottom: 1px solid #DDDDDD;
 }
 
 .heading_row h1 {
+  font-family: $font_family;
   color: #6f6f6f;
   font-size: 3em;
 }
 
 .post_wra {
   width: 100%;
-  border-top: 1px solid #DDDDDD;
+//  border-top: 1px solid #DDDDDD;
   margin-top: 40px;
-  border-bottom: 1px solid #DDDDDD;
+//  border-bottom: 1px solid #DDDDDD;
   margin-bottom: 25px;
+}
+
+#blogeg_article .post_wra{
+  margin-top: 0;
 }
 
 .article_link {
   color: $blog_color;
   text-decoration: none;
   font-size: 1.5em;
+  font-family: $font_family;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
@@ -55,10 +65,14 @@ body.blog {
 }
 
 .credit p {
-  color: #222;
-  font-weight: 800;
+  color: #999;
   font-size: 1em;
-  display: inline-block;
+  display: block;
+  margin-bottom: 5px;
+}
+
+#blogeg_article .credit p{
+  margin-top: 5px;
 }
 
 .comments{
@@ -67,10 +81,23 @@ body.blog {
   margin-left: 5px;
 }
 
+.thePost{
+  font-size: 1.3em;
+  line-height: 1.2em;
+}
 
 .thePost p, .thePost {
-  color: #222;
-  font-size: 1.2em;
+  color: #3A4145;
+  margin: 8px 0;
+}
+
+.thePost p{
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.thePost{
+  font-size: 1.65em;
 }
 
 .thePost a{
@@ -101,6 +128,7 @@ body.blog {
 
 #aside_nav a {
   font-size: 1.3em;
+  font-family: $font_family;
 }
 
 .readMore{

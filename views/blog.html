@@ -15,15 +15,16 @@
 
     <article class="post_wra">
         <h2><a href="/blog/post/{{item.post_link}}" class="article_link">{{item.post_title}}</a></h2>
-        <div class="credit">
-            <p>Posted by: {{item.post_user}}, in {{item.post_dateCreate |date('jS \o\f F')}},</p>
-            <!--<a href="error.html" class="comments">3 comments</a>-->
-        </div>
+
         <div class="thePost">
 
             {{item.post_body |safe}}
 
-            <a href="/blog/post/{{item.post_link}}" class="readMore">Read more</a>
+            <!--<a href="/blog/post/{{item.post_link}}" class="readMore">Read more</a>-->
+        </div>
+        <div class="credit">
+            <p><span class="us_n">{{item.post_user}}</span>, <time>{{item.post_dateCreate |date('jS \o\f F')}}</time></p>
+            <!--<a href="error.html" class="comments">3 comments</a>-->
         </div>
     </article>
 
