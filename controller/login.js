@@ -4,8 +4,13 @@ var Valida = require('./validator').Valida;
 var errors = require('../data/errors');
 
 exports.post = function (req, res, next) {
+
+    if (Valida(req.body.username, 'str_num') == false) {
+        res.writeHead(403, {"Content-Type": "text/plain"});
+        res.end(errors.fuck_you);
+    }
     var qRes = res,
-        user = Valida(req.body.username, 'str_num'),
+        user = req.body.username,
         pass = req.body.password,
         hashedPass = Encript(user, pass);
 
@@ -19,7 +24,7 @@ exports.post = function (req, res, next) {
         res.writeHead(403, {"Content-Type": "text/plain"});
         res.end(errors.fuck_you);
     } else {
-        var  login_data = [user, hashedPass];
+        var login_data = [user, hashedPass];
         User.authorize(login_data, function (user_c) {
             if (user_c == 1) {
                 res.writeHead(403, {"Content-Type": "text/plain"});

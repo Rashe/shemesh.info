@@ -12,9 +12,15 @@ exports.post = function (req, res, next) {
                 return;
             }
             else{
+
+                if((Valida(req.body.username, 'str_num') == false) || (Valida(req.body.email,'email' ) == false)){
+                    res.writeHead(403, {"Content-Type": "text/plain"});
+                    res.end(errors.fuck_you);
+                }
+
                 var qRes = res,
-                    user = Valida(req.body.username, 'str_num'),
-                    email = Valida(req.body.email,'email' ),
+                    user = req.body.username,
+                    email = req.body.email,
                     pass = req.body.password,
                     hashedPass = Encript(user, pass),
                     ghh = req.body.ghhh;

@@ -35,6 +35,8 @@ exports.get = function (req, res) {
 
 };
 
+
+// REgistration enable or disable
 exports.post = function (req, res, next) {
     var qRes = res,
         head_host = req.headers.host,

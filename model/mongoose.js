@@ -6,5 +6,5 @@ var mongoose = require('mongoose');
 //
 //
 //mongoose.connect(mongooseUri);
-mongoose.connect('mongodb://localhost/shemesh_js6');
+mongoose.connect('mongodb://localhost/shemesh_js7');
 module.exports = mongoose;
