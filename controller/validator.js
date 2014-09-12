@@ -5,6 +5,10 @@ function Valida(enemy, what) {
             break;
         case 'email':
             return /^[\w\d\-\.]+@[\w\d\-\.]+$/.test(enemy);
+            break;
+        case 'url':
+            return /^[a-zA-Z][a-zA-Z0-9_]*$/.test(enemy);
+            break;
     }
 }
 
