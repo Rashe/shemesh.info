@@ -5,10 +5,15 @@
     "index_fuck": "Nothing to do here",
     "index_here": "* Don't worry click, trust me, I'm an engineer",
     "nav_home": "Home",
+    "nav_home_title": "Home - Shemesh.info",
     "nav_tests": "Tests(soon)",
+    "nav_tests_title": "Tests",
     "nav_blog": "Blog",
+    "nav_blog_title": "Blog",
     "nav_services": "Services",
+    "nav_services_title": "Services",
     "nav_about": "About",
+    "nav_about_title": "About",
     "error_message": "You have found him!! (404??)",
     "about_h1": "All about",
     "about_p": "There is nothing yet",
@@ -25,14 +30,10 @@
     "login_userPl" : "Username",
     "login_passPl" : "Password",
     "login_button" : "Login",
-    "login_regL" : "Registration"
-
-
-
-
-
-
-
-
-
+    "login_regL" : "Registration",
+    "meta_description": "Rafael Shemesh, just another useless page of developer",
+    "meta_descti_blog": "Rafael Shemesh, just another useless page of developer",
+    "blog_def_title": "Another blog",
+    "blog_h1": "Just another shit",
+    "blog_noPosts": "There are no posts yet"
 }

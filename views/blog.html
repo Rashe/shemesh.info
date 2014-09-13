@@ -7,7 +7,7 @@
 {% block content %}
 <section id="blogeg">
    <div class="heading_row">
-       <h1>Just another shit</h1>
+       <h1>{{data.blog_h1}}</h1>
    </div>
 
     {% if posts %}
@@ -33,7 +33,7 @@
 
     <article class="post_wra">
         <div class="thePost">
-            <p>There is no posts yet</p>
+            <p>{{data.blog_noPosts}}</p>
         </div>
         </article>
 

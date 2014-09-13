@@ -1,8 +1,12 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>shemesh.info </title>
-    <meta name="description" content="Rafael Shemesh, just another useless page of developer">
+    {% if post_data.post_title %}
+    <title>{{post_data.post_title}}</title>
+    {% else %}
+    <title>{{data.blog_def_title}}</title>
+    {% endif %}
+    <meta name="description" content="{{data.meta_descti_blog}}">
     <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
 
     <link rel="stylesheet" type="text/css" href="/css/normalize.css">
