@@ -18,7 +18,9 @@
 
         <div class="thePost">
 
-            {{item.post_body |safe}}
+            {% set pbd = item.post_body |striptags  %}
+            <p style="color:red">{{ pbd | json_encode}}</p>
+           <p>{{item.post_body | replace('^(.{50,50})(.*)', '$1') }}</p>
 
             <!--<a href="/blog/post/{{item.post_link}}" class="readMore">Read more</a>-->
         </div>
