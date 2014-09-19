@@ -105,5 +105,10 @@ else {
     });
 }
 
+swig.setFilter('substr', function (input) {
+  var content = input.replace(/(<p>|<\/p>)/g, "");
+    var shorten_content = content.substring(0, 450);
+    return ('<p>'+ shorten_content+ '</p>')
+});
 
 module.exports = app;

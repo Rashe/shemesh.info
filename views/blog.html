@@ -17,12 +17,9 @@
         <h2><a href="/blog/post/{{item.post_link}}" class="article_link">{{item.post_title}}</a></h2>
 
         <div class="thePost">
-
-            {% set pbd = item.post_body |striptags  %}
-            <p style="color:red">{{ pbd | json_encode}}</p>
-           <p>{{item.post_body | replace('^(.{50,50})(.*)', '$1') }}</p>
-
-            <!--<a href="/blog/post/{{item.post_link}}" class="readMore">Read more</a>-->
+            {% set pbd = item.post_body | substr  %}
+            {{ pbd | safe }}
+            <span class="dotes">...</span>
         </div>
         <div class="credit">
             <p><span class="us_n">{{item.post_user}}</span>, <time>{{item.post_dateCreate |date('jS \o\f F')}}</time></p>
