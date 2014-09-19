@@ -10,7 +10,7 @@ Before deploy:
 4. js and css compress
 
 
-TODO 1 - name and family name, 2 - social icons, 3 - rss, 4 - latest posts on post page
+TODO 1 - name and family name, 3 - rss, 4 - latest posts on post page
 
 express
 sass
