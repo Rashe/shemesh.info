@@ -52,23 +52,23 @@ app.use('/', routes);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-if (app.get('env') === 'development') {
-    app.use(express.static(path.join(__dirname, 'public/dev')));
-    app.use(sass.middleware({
-        src: __dirname + '/public/dev/sass',
-        dest: __dirname + '/public/dev',
-        debug: true
-    }));
-}
-else {
+//if (app.get('env') === 'development') {
+//    app.use(express.static(path.join(__dirname, 'public/dev')));
+//    app.use(sass.middleware({
+//        src: __dirname + '/public/dev/sass',
+//        dest: __dirname + '/public/dev',
+//        debug: true
+//    }));
+//}
+//else {
     app.use(express.static(path.join(__dirname, 'public/prod')));
-    app.use(sass.middleware({
-        src: __dirname + '/public/dev/sass',
-        dest: __dirname + '/public/prod',
-        debug: false,
-        outputStyle: 'compressed'
-    }));
-}
+    //app.use(sass.middleware({
+    //    src: __dirname + '/public/dev/sass',
+    //    dest: __dirname + '/public/prod',
+    //    debug: false,
+    //    outputStyle: 'compressed'
+    //}));
+//}
 
 app.use('/', routes);
 
