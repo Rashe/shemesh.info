@@ -1,1 +1,0 @@
-if (app.get('env') === 'development') {}

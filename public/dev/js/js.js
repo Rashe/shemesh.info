@@ -211,5 +211,3 @@ $(document).ready(function () {
         shmsh.main.blog_sendForm('edit_post', '/post_edit', '/blog_admin');
     }
 });
-
-//{ name: "John", location: "Boston" }

@@ -61,10 +61,10 @@ if (app.get('env') === 'development') {
     }));
 }
 else {
-    app.use(express.static(path.join(__dirname, 'public/dev')));
+    app.use(express.static(path.join(__dirname, 'public/prod')));
     app.use(sass.middleware({
         src: __dirname + '/public/dev/sass',
-        dest: __dirname + '/public/dev',
+        dest: __dirname + '/public/prod',
         debug: false,
         outputStyle: 'compressed'
     }));
