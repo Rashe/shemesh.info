@@ -5,11 +5,15 @@
     <meta name="description" content="{{data.meta_description}}">
     <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
 
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/app.css?23">
+    {# CSS #}
+    {% set icons = true  %}
+    {% block css_include %}
+    {% include '../parts/css_include.html' with icons %}
+    {% endblock %}
 
+    {# JS #}
     {% block js_include %}
-    {% include '../parts/js_include_prod.html' %}
+    {% include '../parts/js_include.html' %}
     {% endblock %}
 </head>
 <body class="{{css}}">
@@ -18,14 +22,17 @@
 </header>
 
 <aside id="aside_nav">
+    {# NAVIGATION #}
     {% block nav %}
     {% include '../parts/nav_inside.html' with data%}
     {% endblock %}
 </aside>
 
 
+{# CONTENT #}
 {% block content %}{% endblock %}
 
+{# TRACKING #}
 {% block track %}
 {% include '../parts/tracking.html' with data%}
 {% endblock %}

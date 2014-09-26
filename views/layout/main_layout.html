@@ -5,25 +5,29 @@
     <meta name="description" content="{{data.meta_description}}">
     <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
 
-    <link rel="stylesheet" type="text/css" href="/css/app.css?23">
+    {# CSS #}
+    {% block css_include %}
+    {% include '../parts/css_include.html' %}
+    {% endblock %}
 
+    {# JS #}
     {% block js_include %}
-    {% include '../parts/js_include_prod.html' %}
+    {% include '../parts/js_include.html' %}
     {% endblock %}
 </head>
 <body class="{{css}}">
 <header>
+    {# NAVIGATION #}
     {% block nav %}
     {% include '../parts/nav.html' with data%}
     {% endblock %}
 </header>
 
 
+{# CONTENT #}
 {% block content %}{% endblock %}
 
-
-
-
+{# TRACKING #}
 {% block track %}
 {% include '../parts/tracking.html' with data%}
 {% endblock %}
