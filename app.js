@@ -50,14 +50,13 @@ app.use(session({
 
 app.use('/', routes);
 
-app.use(express.static(path.join(__dirname, 'public')));
-
 if (app.get('env') === 'development') {
     app.use(express.static(path.join(__dirname, 'public/dev')));
     app.use(sass.middleware({
         src: __dirname + '/public/dev/sass',
         dest: __dirname + '/public/dev',
         debug: true
+        //,outputStyle: 'compressed'
     }));
 }
 else {
