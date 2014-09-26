@@ -7,25 +7,15 @@
 
     <link rel="stylesheet" type="text/css" href="/css/app.css">
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="/js/plugin.js"></script>
-    <script src="/js/js.js"></script>
-    <script src="/js/auth.js"></script>
-
-    <script type="text/javascript">
-        var isIE11 = navigator.userAgent.match(/Trident\/7.0; rv 11.0/),
-                path = window.location.href;
-        if ((navigator.userAgent.indexOf('MSIE') != -1) || (isIE11 != null)) {
-            // Using IE
-            if (path != 'http://shemesh.info/user_normal') {
-                window.location = "/user_normal"
-            }
-        }
-    </script>
+    {% block js_include %}
+    {% include '../parts/js_include.html' %}
+    {% endblock %}
 </head>
 <body class="{{css}}">
 <header>
-    {% block nav %}{% endblock %}
+    {% block nav %}
+    {% include '../parts/nav.html' with data%}
+    {% endblock %}
 </header>
 
 
