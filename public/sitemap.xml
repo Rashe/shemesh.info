@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+  <loc>http://shemesh.info/</loc>
+  <lastmod>2014-10-04T00:01:41+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://shemesh.info/blog</loc>
+  <lastmod>2014-10-04T00:01:41+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://shemesh.info/login</loc>
+  <lastmod>2014-10-04T00:01:41+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://shemesh.info/about</loc>
+  <lastmod>2014-10-04T00:01:41+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://shemesh.info/blog/post/the_first_post_in_blog</loc>
+  <lastmod>2014-10-04T00:01:41+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://shemesh.info/registration</loc>
+  <lastmod>2014-10-04T00:01:41+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://shemesh.info/forgot_pass</loc>
+  <lastmod>2014-10-04T00:01:41+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+</urlset>
